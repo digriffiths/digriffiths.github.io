@@ -303,10 +303,27 @@ h6 a {
 	text-decoration: none;
 }
 
+
+
 h1 {
 	font-size: 4rem;
 	line-height: 1.1;
 	margin: 0 0 2rem 0;
+}
+
+.heading-with-image {
+	display: flex;
+	align-items: center;
+}
+
+.heading-with-image h2 {
+	flex: 1;
+	margin-right: 10px;
+}
+
+.heading-with-image img {
+	max-width: 100%;
+	height: auto;
 }
 
 h2 {
@@ -409,6 +426,7 @@ a {
 a:hover {
 	border-bottom-color: transparent;
 	color: #18bfef !important;
+	text-decoration: none;
 }
 
 strong,
@@ -2765,6 +2783,20 @@ input[type="radio"]:focus+label:before {
 	width: 100%;
 }
 
+.image.center {
+	display: flex;
+	justify-content: center;
+	padding-top: 40px;
+	padding-bottom: 80px;
+}
+
+.image.right2 {
+	display: inline-flex;
+	justify-content: right;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
 @media screen and (max-width: 736px) {
 
 	.image.fit {
@@ -3640,12 +3672,16 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 #header a {
 	color: #ffffff;
 	border-bottom-color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+
 }
 
 #header a:hover {
 	border-bottom-color: transparent;
 	color: #18bfef !important;
+	text-decoration: none;
 }
+
 
 #header strong,
 #header b {
