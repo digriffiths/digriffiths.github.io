@@ -2788,8 +2788,12 @@ input[type="radio"]:focus+label:before {
 	justify-content: center;
 	padding-top: 40px;
 	padding-bottom: 80px;
+}
+
+.image.center img {
 	max-width: 100%;
-	width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 .image.right2 {
