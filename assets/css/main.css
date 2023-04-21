@@ -2735,7 +2735,7 @@ input[type="radio"]:focus+label:before {
 
 .image.left,
 .image.right {
-	max-width: 40%;
+	max-width: 100%;
 }
 
 .image.left img,
@@ -2781,7 +2781,7 @@ input[type="radio"]:focus+label:before {
 }
 
 .image.center img {
-	/* width: 100%; */
+	width: 100%;
 }
 
 .image.main {
