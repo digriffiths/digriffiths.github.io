@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Daniel Griffiths Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/loadNav.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro">
+			<a href="index.html">
+				<h1>Daniel Griffiths</h1>
+			</a>
+			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading
+			</div>
+
+		<!-- Nav -->
+		<div id="nav"></div>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Text stuff -->
+			<div class="heading-with-image">
+				<h2>Pivot Point Trading Strategy</h2>
+				<span class="image right">
+					<img src="images/technical_analysis.jpg" alt="" style="" />
+				</span>
+			</div>
+			<!-- Overview -->
+			<div>
+				<h3>Overview</h3>
+				<p>
+					This pivot point trading strategy is inspired by the legendary trader Jesse Livermore. Pivot points are
+					key levels on a chart where price tends
+					to pivot or reverse, making them important areas to watch for potential trading opportunities. This
+					strategy involves identifying these pivot points and using them as entry and exit points for trades. To
+					manage risk, it includes a stop loss, which is a predetermined point at which the trade will be exited
+					if the market moves in the opposite direction.
+				</p>
+			</div>
+
+			<div>
+				<h3>Code</h3>
+				<p>
+					Here is the a link to the <a href="https://github.com/digriffiths/pivot_points" target="_blank">code</a>.
+				</p>
+			</div>
+
+
+			<ul style="list-style: none;">
+				<h3>Methodology</h3><br>
+				<h4>Import btc data</h4>
+				<li>First, we import bitcoin daily data. I chose 2017 - 2023 so we have a large time period to experiment with.
+				</li>
+				<span class="image center">
+					<img src="images/pivots_btc_df.png" alt="" style="width: 600px; height: auto;" />
+				</span>
+				<h4>Find & Plot Pivot Points</h4>
+				<li>The logic behind determining a pivot points involves tracking the max close price within a certain
+					time period e.g. 10 days and setting an amount of time it must be the max value e.g. 5 days. For
+					example, if
+					i track at a 10 day window and the price hits a a high of $10, price must stay below $10 for 5 days
+					for this price point
+					be considered a pivot point. Theese variables can be changed easily. See plot below showing pivot
+					points
+				</li>
+				<span class="image center">
+					<img src="images/pivots_btc_df_pivot_plot.png" alt="" style="" />
+				</span>
+				<h4>Build Strategy</h4>
+				<li>With the pivot points identified, the next step is to formulate a trading strategy based on the
+					findings. To execute this strategy, we look to enter a long position when the price breaks through a
+					pivot point above, and a short position when the price breaks through a pivot point below. To
+					confirm a breakout, a buffer of 5% is applied, requiring the price to surpass the pivot point by
+					this amount before we take a position. To mitigate risk, a stop loss is implemented to switch our
+					position to neutral if the price moves in the opposite direction.
+				</li>
+				<span class="image center">
+					<img src="images/pivots_btc_df_build_strat.png" alt="" style="" />
+				</span>
+				<h4>Plot Results</h4>
+				<li>Here is a chart showing our strategy performance comapred with buy & hold.</li>
+				<span class="image center">
+					<img src="images/pivots_btc_df_strat_plot.png" alt="" style="" />
+				</span>
+				<h4>Optimize Results</h4>
+				<li>We can find the optimal performance for our strategy. This tests tests a range of variables and
+					outputs the top performing results. Below is a plot of these results</li>
+				<span class="image center">
+					<img src="images/pivots_btc_df_optimized.png" alt="" style="" />
+				</span>
+			</ul>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

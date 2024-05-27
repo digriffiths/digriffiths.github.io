@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Daniel Griffiths Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/loadNav.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro">
+			<a href="index.html">
+				<h1>Daniel Griffiths</h1>
+			</a>
+			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading
+			</div>
+
+		<!-- Nav -->
+		<div id="nav"></div>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Text stuff -->
+			<div class="heading-with-image">
+				<h2>News Sentiment Analysis For Algorithmic Trading</h2>
+				<!-- <img src="images/news.jpg" alt="" style="width: 500px; height: auto;" /> -->
+				<span class="image right">
+					<img src="images/news.jpg" alt="" style="" />
+				</span>
+			</div>
+			<div>
+				<h3>Overview</h3>
+				<p>
+					This project involves web scraping bitcoin news articles, analyzing
+				their sentiment using natural language processing (NLP) techniques and building a strategy around this
+				data. The process and parameters are then optimized to improve profitability. The main goal of this
+				project is to develop signals that can be used for algorithmic trading. The methodology for the backtest
+				is outlined
+				below.
+				</p>
+					
+			</div>			
+
+			<div>
+				<h3>Code</h3>
+				<p>
+					Here is the a link to the <a href="https://github.com/digriffiths/news_sentiment_analysis" target="_blank">code</a>.
+				</p>
+					
+			</div>
+			<ul style="list-style: none;">
+				
+				<h3>Methodology</h3><br>
+				<h4>Scrape News</h4>
+				<li>The first step is to gather headlines related to "bitcoin" by web scraping news websites. I
+					downloaded roughly 100 articles per
+					day, and consolidating them into a single dataframe.
+				</li>
+				<span class="image center">
+					<img src="images/article_df.png" alt="" style="width: 600px; height: auto;" />
+				</span>
+				<h4>Normalize Text</h4>
+				<li>Next, I normalize the scraped text by applying techniques such as contraction fixing, stemming, and
+					tokenization. This can imrpove the accuracy of sentiment analysis by simplifing the input.
+				</li>
+				<span class="image center">
+					<img src="images/article_df_norm.png" alt="" style="width:900px; height: auto;" />
+				</span>
+				<h4>Sentiment Analysis</h4>
+				<li>I then conducted sentiment analysis on the normalized text using a combination of pre-trained
+					libraries and
+					custom-built models, including logistic regression and naive Bayes. You can see a sentiment score
+					below
+				</li>
+				<span class="image center">
+					<img src="images/article_df_sent.png" alt="" style="width: 900px; height: auto;" />
+				</span>
+				<h4>Build Strategy</h4>
+				<li>Now I have the sentiment, I can then create a trading strategy based on the results. I experimented
+					with
+					using moving averages, minimum/maximum values for trading, and other techniques to optimize the
+					strategy.
+				</li>
+				<span class="image center">
+					<img src="images/article_df_sent_strat.png" alt="" style="width: 1000px; height: auto;" />
+				</span>
+				<h4>Plot Results</h4>
+				<li>After thorough testing and optimization, here is a chart for the most profitable version. I intend
+					to continue optimizing and testing and hopefully launch this to test on market if results
+					look promising.</li>
+				<span class="image center">
+					<img src="images/article_df_sent_strat_optim_plot.png" alt=""
+						style="width: 1000px; height: auto;" />
+				</span>
+			</ul>
+
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
