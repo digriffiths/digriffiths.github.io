@@ -1,119 +1,76 @@
-<!DOCTYPE HTML>
-<html>
-
 <head>
-	<title>Daniel Griffiths Portfolio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<script src="assets/js/loadNav.js"></script>
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="is-preload">
+<script src="assets/js/loadNav.js"></script>
 
-	<!-- Wrapper -->
-	<div id="wrapper" class="fade-in">
-
-		<!-- Intro -->
-		<div id="intro">
-			<a href="index.html">
-				<h1>Daniel Griffiths</h1>
-			</a>
-			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading
-			</div>
-
-		<!-- Nav -->
-		<div id="nav"></div>
-
-		<!-- Main -->
-		<div id="main">
-			<!-- Text stuff -->
-			<div class="heading-with-image">
-				<h2>News Sentiment Analysis For Algorithmic Trading</h2>
-				<!-- <img src="images/news.jpg" alt="" style="width: 500px; height: auto;" /> -->
-				<span class="image right">
-					<img src="images/news.jpg" alt="" style="" />
-				</span>
-			</div>
-			<div>
-				<h3>Overview</h3>
-				<p>
-					This project involves web scraping bitcoin news articles, analyzing
-				their sentiment using natural language processing (NLP) techniques and building a strategy around this
-				data. The process and parameters are then optimized to improve profitability. The main goal of this
-				project is to develop signals that can be used for algorithmic trading. The methodology for the backtest
-				is outlined
-				below.
-				</p>
-					
-			</div>			
-
-			<div>
-				<h3>Code</h3>
-				<p>
-					Here is the a link to the <a href="https://github.com/digriffiths/news_sentiment_analysis" target="_blank">code</a>.
-				</p>
-					
-			</div>
-			<ul style="list-style: none;">
-				
-				<h3>Methodology</h3><br>
-				<h4>Scrape News</h4>
-				<li>The first step is to gather headlines related to "bitcoin" by web scraping news websites. I
-					downloaded roughly 100 articles per
-					day, and consolidating them into a single dataframe.
+<div id="wrapper">
+	<div class="banner">
+		<div class="banner-photo">
+			<img src="images/daniel_griffiths_2.png"/>
+		</div>
+		<div class="banner-text">
+			<h1>DANIEL GRIFFITHS</h1>
+			<hr style="border-style: dotted; margin: 0 30%;"> <!-- Shorthand margin -->
+			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading</p>
+		</div>
+	</div>
+	<div id="nav"></div>
+	<div class="main">
+		<h1>News Sentiment Analysis For Algorithmic Trading</h1>
+		<h3>Overview</h3>
+		<p>
+		This project involves collecting news articles, extracting and storing their titles and dates, and analyzing their sentiment. The sentiment scores are used to generate trading signals. The performance of the strategy is visualized to evaluate the effectiveness of various sentiment analysis methods.
+		</p>
+		<p>
+			Here is the a link to the <a href="https://github.com/digriffiths/news_sentiment_analysis" target="_blank">code</a>.
+		</p>
+		<p></p>
+		<h3>Getting the Data</h3>
+		<p>
+		A custom-built news retriever gathers articles by constructing URLs tailored to specific search queries and date ranges. The articles are parsed using Beautiful Soup to extract titles and dates. This information is stored in a pandas DataFrame, indexed by date, and saved as a CSV file for further processing.
+		</p>
+		<img src="images/news_data.png" style="border: 1px solid lightgrey; width: auto">
+		<p class="content-label">Bitcoin news article headlines over 2 year period</p>
+		<p></p>
+		<h3>Sentiment Analysis</h3>
+		<p>
+		The normalization of headlines involves several steps:
+		</p>
+		<ul>
+			<li>Removing non-English characters and numbers.</li>
+			<li>Expanding contractions.</li>
+			<li>Tokenizing the text.</li>
+			<li>Stemming the tokens.</li>
+			<li>Eliminating stop words.</li>
+		</ul>
+		<p>Sentiment scores are then calculated using two tools: VADER (Valence Aware Dictionary and sEntiment Reasoner) and TextBlob. VADER is a lexicon and rule-based sentiment analysis tool designed to handle sentiments expressed in social media. TextBlob is a simpler library providing an API for common natural language processing (NLP) tasks, including sentiment analysis, based on pattern library and text processing methodologies.
+		</p>		
+		<p>The sentiment scores from both tools are appended to the DataFrame. The data is resampled to a daily frequency, and corresponding market data, including daily asset returns and cumulative returns, is integrated into the DataFrame. Sentiment-based trading signals are generated based on these scores, influencing the strategy's returns calculations.</p>
+		<img src="images/sentiment_scores.png" style="border: 1px solid lightgrey; width: auto">
+		<p class="content-label">News article headlines sentiment scores, bitcoin returns and cumulative returns</p>
+		<h3>Trading Strategy</h3>
+		<p>
+			<ul>
+				<li>Long Position: Triggered by a sentiment score above zero, indicating a positive market outlook.
 				</li>
-				<span class="image center">
-					<img src="images/article_df.png" alt="" style="width: 600px; height: auto;" />
-				</span>
-				<h4>Normalize Text</h4>
-				<li>Next, I normalize the scraped text by applying techniques such as contraction fixing, stemming, and
-					tokenization. This can imrpove the accuracy of sentiment analysis by simplifing the input.
+				<li>Short Position: Triggered by a sentiment score below zero, indicating a negative market outlook.
 				</li>
-				<span class="image center">
-					<img src="images/article_df_norm.png" alt="" style="width:900px; height: auto;" />
-				</span>
-				<h4>Sentiment Analysis</h4>
-				<li>I then conducted sentiment analysis on the normalized text using a combination of pre-trained
-					libraries and
-					custom-built models, including logistic regression and naive Bayes. You can see a sentiment score
-					below
+				<li>Neutral Position: Triggered by a sentiment score of zero, indicating no significant market sentiment.
 				</li>
-				<span class="image center">
-					<img src="images/article_df_sent.png" alt="" style="width: 900px; height: auto;" />
-				</span>
-				<h4>Build Strategy</h4>
-				<li>Now I have the sentiment, I can then create a trading strategy based on the results. I experimented
-					with
-					using moving averages, minimum/maximum values for trading, and other techniques to optimize the
-					strategy.
-				</li>
-				<span class="image center">
-					<img src="images/article_df_sent_strat.png" alt="" style="width: 1000px; height: auto;" />
-				</span>
-				<h4>Plot Results</h4>
-				<li>After thorough testing and optimization, here is a chart for the most profitable version. I intend
-					to continue optimizing and testing and hopefully launch this to test on market if results
-					look promising.</li>
-				<span class="image center">
-					<img src="images/article_df_sent_strat_optim_plot.png" alt=""
-						style="width: 1000px; height: auto;" />
-				</span>
 			</ul>
-
-
-			<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+		</p>
+		<h3>Performance Visualization</h3>
+		<p>
+		The cumulative returns are visualized in a chart, comparing the performance between the VADER and TextBlob sentiment analysis methods. This visualization helps assess the effectiveness of each sentiment analysis technique in predicting market movements based on news sentiment and provides insights into the impact of news sentiment on market behavior over time.
+		</p>
+		<img src="images/setiment_analyser.png" style="border: 1px solid lightgrey">		
+		<div class="skills">
+			<h3>Key Skills</h3>
+			<p>
+			Python, Web Scraping, Data Handling with pandas, Sentiment Analysis, Natural Language Processing (NLP), Algorithmic Trading Strategy Development, Data Visualization, API Integration, Performance Analysis
+			</p>
+		</div>
+	</div>
+</div>

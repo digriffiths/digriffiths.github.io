@@ -1,116 +1,56 @@
-<!DOCTYPE HTML>
-<html>
-
 <head>
-	<title>Daniel Griffiths Portfolio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<script src="assets/js/loadNav.js"></script>
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="is-preload">
+<script src="assets/js/loadNav.js"></script>
 
-	<!-- Wrapper -->
-	<div id="wrapper" class="fade-in">
-
-		<!-- Intro -->
-		<div id="intro">
-			<a href="index.html">
-				<h1>Daniel Griffiths</h1>
-			</a>
-			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading
-			</div>
-
-		<!-- Nav -->
-		<div id="nav"></div>
-
-		<!-- Main -->
-		<div id="main">
-			<!-- Text stuff -->
-			<div class="heading-with-image">
-				<h2>Pivot Point Trading Strategy</h2>
-				<span class="image right">
-					<img src="images/technical_analysis.jpg" alt="" style="" />
-				</span>
-			</div>
-			<!-- Overview -->
-			<div>
-				<h3>Overview</h3>
-				<p>
-					This pivot point trading strategy is inspired by the legendary trader Jesse Livermore. Pivot points are
-					key levels on a chart where price tends
-					to pivot or reverse, making them important areas to watch for potential trading opportunities. This
-					strategy involves identifying these pivot points and using them as entry and exit points for trades. To
-					manage risk, it includes a stop loss, which is a predetermined point at which the trade will be exited
-					if the market moves in the opposite direction.
-				</p>
-			</div>
-
-			<div>
-				<h3>Code</h3>
-				<p>
-					Here is the a link to the <a href="https://github.com/digriffiths/pivot_points" target="_blank">code</a>.
-				</p>
-			</div>
-
-
-			<ul style="list-style: none;">
-				<h3>Methodology</h3><br>
-				<h4>Import btc data</h4>
-				<li>First, we import bitcoin daily data. I chose 2017 - 2023 so we have a large time period to experiment with.
-				</li>
-				<span class="image center">
-					<img src="images/pivots_btc_df.png" alt="" style="width: 600px; height: auto;" />
-				</span>
-				<h4>Find & Plot Pivot Points</h4>
-				<li>The logic behind determining a pivot points involves tracking the max close price within a certain
-					time period e.g. 10 days and setting an amount of time it must be the max value e.g. 5 days. For
-					example, if
-					i track at a 10 day window and the price hits a a high of $10, price must stay below $10 for 5 days
-					for this price point
-					be considered a pivot point. Theese variables can be changed easily. See plot below showing pivot
-					points
-				</li>
-				<span class="image center">
-					<img src="images/pivots_btc_df_pivot_plot.png" alt="" style="" />
-				</span>
-				<h4>Build Strategy</h4>
-				<li>With the pivot points identified, the next step is to formulate a trading strategy based on the
-					findings. To execute this strategy, we look to enter a long position when the price breaks through a
-					pivot point above, and a short position when the price breaks through a pivot point below. To
-					confirm a breakout, a buffer of 5% is applied, requiring the price to surpass the pivot point by
-					this amount before we take a position. To mitigate risk, a stop loss is implemented to switch our
-					position to neutral if the price moves in the opposite direction.
-				</li>
-				<span class="image center">
-					<img src="images/pivots_btc_df_build_strat.png" alt="" style="" />
-				</span>
-				<h4>Plot Results</h4>
-				<li>Here is a chart showing our strategy performance comapred with buy & hold.</li>
-				<span class="image center">
-					<img src="images/pivots_btc_df_strat_plot.png" alt="" style="" />
-				</span>
-				<h4>Optimize Results</h4>
-				<li>We can find the optimal performance for our strategy. This tests tests a range of variables and
-					outputs the top performing results. Below is a plot of these results</li>
-				<span class="image center">
-					<img src="images/pivots_btc_df_optimized.png" alt="" style="" />
-				</span>
-			</ul>
-
-			<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+<div id="wrapper">
+	<div class="banner">
+		<div class="banner-photo">
+			<img src="images/daniel_griffiths_2.png"/>
+		</div>
+		<div class="banner-text">
+			<h1>DANIEL GRIFFITHS</h1>
+			<hr style="border-style: dotted; margin: 0 30%;"> <!-- Shorthand margin -->
+			<p>Python Developer, Backend Developer, Machine Learning, LLMs, Trading</p>
+		</div>
+	</div>
+	<div id="nav"></div>
+	<div class="main">
+		<h1>Pivot Point Trading Strategy</h1>
+		<h3>Overview</h3>
+		<p>
+		Pivot points are crucial levels on a chart where the price is likely to change direction or reverse. These points are used as potential indicators for identifying trading opportunities. This strategy leverages pivot points to pinpoint optimal entry and exit points for trades, enhancing decision-making. To manage risks effectively, the strategy includes a stop-loss mechanism, which sets a predefined exit point for a trade if the market moves against the expected direction.
+		</p>
+		<p>
+		Here is the <a href="https://github.com/digriffiths/pivot_points" target="_blank">link to the code</a>.
+		</p>
+		<h3>Data Foundation</h3>
+		<p>The strategy utilizes daily Bitcoin data from 2017 to 2023. This extensive dataset provides a solid basis for evaluating the trading strategy under various market conditions, ensuring robustness and adaptability.
+		</p>
+		<img src="images/pivots_btc_df.png" alt="" style="width: 30%;" />
+		<h3>Identifying and Visualizing Pivot Points</h3>
+		<p>At the heart of this strategy is the detection of pivot points, determined by the highest closing price within a specified window, such as 10 days. For a price to be considered a pivot point, it must remain the highest closing price for a set duration, like 5 days. This approach allows for the dynamic adjustment of parameters to suit changing market dynamics. Once identified, these pivot points are graphically represented on a chart, clearly marking potential trading signals.
+		</p>
+		<img src="images/pivots_btc_df_pivot_plot.png"/>
+		<h3>Strategy Formulation</h3>
+		<p>Upon establishing the pivot points, the strategy defines specific rules for entering and exiting trades. A long position is initiated when the price ascends above a pivot point, while a short position is established when it descends below. To ensure the validity of breakouts, a 5% buffer is applied, requiring the price to exceed the pivot point by this margin before executing a trade. Additionally, a stop-loss is implemented to curtail potential losses by exiting the position if the price trends unfavorably.
+		</p>
+		<img src="images/pivots_btc_df_build_strat.png"/>
+		<h3>Performance Visualization</h3>
+		<p>The strategy's effectiveness is illustrated through a comparative chart that contrasts the performance of the pivot point strategy with a simple buy-and-hold approach. This visual comparison underscores the advantages and efficacy of incorporating pivot points into trading strategies.
+		</p>
+		<img src="images/pivots_btc_df_strat_plot.png"/>
+		<h3>Optimization of Strategy</h3>
+		<p>To enhance the strategy's performance, an optimization process is undertaken, testing various combinations of parameters-window size, duration for the highest price, and stop-loss levels to determine the most effective settings. The results of this optimization are graphically displayed, highlighting the best-performing configurations and providing insights into how different parameters influence the returns of the strategy.
+		</p>
+		<img src="images/pivots_btc_df_optimized.png"/>
+		<div class="skills">
+			<h3>Key Skills</h3>
+			<p>
+			Python, Data Handling with pandas, Algorithmic Trading Strategy Development, Data Visualization, Performance Analysis, Risk Management, Financial Data Analysis, Technical Analysis
+			</p>
+		</div>
+	</div>
+</div>
