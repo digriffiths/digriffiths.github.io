@@ -312,6 +312,7 @@ max-width: 800px; /* Maximum width of the iframe */
     left: 0;
     background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
     overflow: auto; /* Allows scrolling */
+    background-size: cover;
 }
 
 /* Style for the navigation bar */
