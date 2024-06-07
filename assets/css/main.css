@@ -188,12 +188,36 @@ p, ul {
 }
 
 .title-image {
+    position: relative; /* Add this line */
     width: 100% !important; /* Stretch across the full width of the container */
-    height: 300; /* Set a fixed height */
-    object-fit: cover; /* Crop and cover the area without distorting the aspect ratio */
-    object-position: center; /* Center the image within the element's box */
+    height: 200px; /* Set a fixed height and ensure the unit is specified */
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.title-image img {
+    width: 100% !important; /* Stretch across the full width of the container */
+    height: 200; /* Set a fixed height */
+    object-fit: cover; /* Crop and cover the area without distorting the aspect ratio */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+.title-image h1 {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to the exact center */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+    text-align: center;
+    padding: 10px 10px; /* Increased padding for better visual separation */
+    margin: 0px; /* Important to keep it at zero */
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bolder font for better readability */
+    white-space: nowrap;
+    border-radius: 10px;
 }
 
 .article-heading {
