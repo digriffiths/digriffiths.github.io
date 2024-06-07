@@ -73,18 +73,18 @@ p, ul {
 } */
 
 #nav {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally, if needed */
+    align-items: center; /* Center vertically */
+    padding: 0;
+    background: rgba(255, 255, 255, 0.175);
+    color: white;
 	line-height: 3rem;
     width: 72rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
-    color: white;
     border: 1px dotted black;
-    background: rgba(255, 255, 255, 0.175);
     height: 3rem;
-    display: flex; /* Enable flexbox */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally, if needed */
 }
 
 .main {
@@ -456,6 +456,47 @@ button.primary:hover,
     .banner, .main {
         width: 100%;
         margin: 0 auto;
-        padding: 0 10px; /* Add padding if needed */
+        padding: 0 10px;
     }
+    .main p, .main ul, .main li, .main h1, .main h2, .main h3, .main h4 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    
+    #nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Toggle class for showing menu */
+.active-nav {
+    display: flex;
 }
