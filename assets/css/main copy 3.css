@@ -36,7 +36,7 @@ p, ul {
 
 .banner-photo img {
     width: 100%; /* Ensures the image covers the full width of its container */
-    height: auto; /* Ensures the image covers the full height of its container */
+    height: 100%; /* Ensures the image covers the full height of its container */
     border-radius: 50%;
     object-fit: cover;
     position: absolute; /* Positioning it absolutely inside the relative container */
@@ -57,6 +57,19 @@ p, ul {
     transform: translateY(-50%); /* Shift it up by half its own height */
     display: flex; /* Added to use flexbox for centering */
     justify-content: center; /* Center horizontally */
+}
+
+#nav {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally, if needed */
+    align-items: center; /* Center vertically */
+    padding: 0;
+    background: rgba(255, 255, 255, 0.175);
+    color: white;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 10px dotted black; */
 }
 
 .main {
@@ -147,10 +160,10 @@ p, ul {
 
 .main h2 {
     margin: 0; /* Removes the default margin */
-    padding-top: 3%; /* Padding set to 50px */
-    padding-bottom: 3%; /* Padding set to 50px */
-    padding-left: 3%; /* Padding set to 50px */
-    padding-right: 3%; /* Padding set to 50px */
+    padding-top: 50px; /* Padding set to 50px */
+    padding-bottom: 30px; /* Padding set to 50px */
+    padding-left: 70px; /* Padding set to 50px */
+    padding-right: 70px; /* Padding set to 50px */
     font-size: 20;
     font-weight: bold; /* Makes the text bold */
 }
@@ -193,28 +206,29 @@ p, ul {
 }
 
 .article-heading {
-    padding-left: 3%;
+    padding-left: 30px;
 }
 
 .welcome-container {
     display: flex;
     align-items: center; /* Keeps items vertically aligned in the middle */
-    height: 450px;
-    padding: 50px;
 }
 
-.welcome-message {
+.welcome-left {
 flex: 1; /* Takes up 1 part of the available space */
-padding: 0;
+padding: 30;
 text-align: center;
 }
 
-.welcome-video {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Ensure the container has a height to work with */
+.welcome-right {
+flex: 2; /* Takes up 2 parts of the available space, making it larger than the left */
+padding: 30;
+
+}
+iframe {
+width: 100%; /* Makes the iframe responsive within its container */
+height: 450px; /* You can adjust or make it responsive as needed */
+max-width: 800px; /* Maximum width of the iframe */
 }
 
 .article-container {
@@ -287,43 +301,18 @@ text-align: center;
 }
 
 /* Style for the navigation bar */
-#nav {
-    display: flex; /* Use flexbox to align children */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Align items vertically */
-    padding: 0;
-    background: rgba(255, 255, 255, 0.175);
-    color: white;
-    line-height: 3rem;
-    width: 70%; /* Ensure the nav bar extends full width */
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px dotted black;
-    height: 3rem;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    flex-wrap: wrap; /* Allow items to wrap */
-}
 
 
 /* General link styles */
 #nav ul {
-    display: flex; /* Enable flexbox for direct children */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; /* Using flexbox to align items horizontally */
     padding: 0; /* Removes default padding */
     list-style: none; /* Removes default list styling */
-    width: 100%; /* Full width to contain all items */
-    margin: 0; /* Remove default margin */
-    flex-wrap: wrap; /* Allow items to wrap */
 }
 
 #nav li {
-    display: inline; /* Allows items to sit in line and use flex properties */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    text-wrap: nowrap;
-    padding: 0 10px; /* Add some padding around each item */
+    display: inline-block; /* Ensures list items are in a line */
+    margin-right: 20px; /* Adds space between the items */
 }
 
 #nav li a {
@@ -446,56 +435,4 @@ button.primary:hover,
 
 .field textarea {
     height: 200px;
-}
-
-@media (max-width: 768px) {
-    #nav {
-        display: none
-    }
-
-    .banner {
-        width: 100%;
-    }
-
-    .banner-photo {
-        margin-top: 0px;
-        top: 10%;
-        right: 5%;
-    }
-
-    .banner-photo img {
-        width: 50px;
-    }
-
-    .main {
-        width: 100%;
-    }
-
-    .welcome-container {
-        display: inline;
-        padding: 0px;
-        height: 0px;
-    }
-
-    .welcome-message {
-        padding: 0px;
-    }
-    
-    .welcome-video {
-        height: auto; /* Ensure the container has a height to work with */
-    }
-
-    .welcome-video iframe {
-        width: auto; /* Makes the iframe responsive within its container */
-        height: auto; /* You can adjust or make it responsive as needed */
-        padding: 0;
-        margin: 0;
-        }
-
-    .article-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        color: white;
-    }
-
 }

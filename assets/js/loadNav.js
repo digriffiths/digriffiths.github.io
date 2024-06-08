@@ -1,18 +1,17 @@
 window.onload = function() {
     const navElement = document.getElementById('nav');
-    // Adjust the path as necessary, e.g., './nav.html' or '/repository/nav.html'
     fetch('./nav.html')
         .then(response => response.text())
         .then(html => {
             navElement.innerHTML = html;
-            const navLinks = document.querySelectorAll('#nav .links li');
+            const navLinks = document.querySelectorAll('#nav ul li a'); // Corrected selector
             const currentPath = window.location.pathname.split('/').pop();
 
             navLinks.forEach(link => {
-                if (link.querySelector('a').getAttribute('href').includes(currentPath)) {
-                    link.classList.add('active');
+                if (link.getAttribute('href').includes(currentPath)) {
+                    link.parentElement.classList.add('active'); // Add class to li, not a
                 } else {
-                    link.classList.remove('active');
+                    link.parentElement.classList.remove('active');
                 }
             });
         })
