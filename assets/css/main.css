@@ -40,7 +40,6 @@ p, ul {
 
 .banner {
     position: relative;
-    border: #18bfef 5px solid;
     width: 82rem;
     align-items: center;
     margin-left: auto;
@@ -270,7 +269,6 @@ p, ul {
     text-align: center;
     margin: 0; /* Remove any default margins */
     padding: 0; /* Remove any default margins */
-
 }
 
 .article img {
@@ -411,77 +409,6 @@ button.primary:hover,
     height: 200px;
 }
 
-@media (max-width: 768px) {
-    nav {
-        width: 100%;
-    }
-    
-    nav li {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    nav a {
-        padding: 10px;
-    }
-
-    .main {
-        width: 100%;
-    }
-
-    .welcome-container {
-        display: inline;
-        padding: 0px;
-        height: 0px;
-    }
-
-    .welcome-message {
-        padding: 0px;
-    }
-    
-    .welcome-video {
-        height: 250px;
-        display: flex;
-        align-items: flex-start;
-        padding: 0;
-        margin: 0;
-    }
-
-    .article-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        color: white;
-    }
-
-    .title-image h1 {
-        font-size: 10px; /* Larger font size */
-    }
-
-    .title-image img {
-        height: 10%; /* Set a fixed height */
-    }
-
-    .welcome-video iframe {
-        width: 350px; /* Makes the iframe responsive within its container */
-        height: auto;
-        aspect-ratio: 16 / 9; /* Adjust this value based on the desired aspect ratio */
-        padding: 0px;
-    }
-
-    .responsive-image {
-        width: 90% !important; /* Full width on small devices */
-        border: 1px solid lightgrey;
-    }
-    
-    .banner-photo {
-        display: none
-    };
-
-    .banner {
-        width: 100%;
-    }
-}
-
 @media (max-width: 1024px) {
     nav {
         width: 100%;
@@ -504,6 +431,16 @@ button.primary:hover,
 
     .banner {
         width: 100%;
+    }
+
+    .article h2 {
+        padding: 0px;
+        font-size: 15;
+    }
+    
+    .article p {
+        font-size: 15;
+        height: 80px; /* Corrected height with unit */
     }
 }
 
@@ -548,5 +485,105 @@ button.primary:hover,
 
     .banner {
         width: 100%;
+    }
+
+    .article h2 {
+        padding: 0px;
+        font-size: 15;
+    }
+    
+    .article p {
+        font-size: 15;
+        height: 80px; /* Corrected height with unit */
+    }
+}
+
+@media (max-width: 800px) {
+    .article-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .article h2 {
+        padding: 0px;
+        font-size: 15;
+    }
+    
+    .article p {
+        font-size: 15;
+        height: 80px; /* Corrected height with unit */
+    }
+
+    .banner-photo {
+        display: none
+    };
+}
+
+@media (max-width: 500px) {
+    nav {
+        width: 100%;
+    }
+    
+    nav li {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav a {
+        padding: 10px;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .welcome-container {
+        display: inline;
+        padding: 0px;
+        height: 0px;
+    }
+
+    .welcome-message {
+        padding: 0px;
+    }
+    
+    .welcome-video {
+        height: 250px;
+        display: flex;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+
+    .title-image h1 {
+        font-size: 10px; /* Larger font size */
+    }
+
+    .title-image img {
+        height: 10%; /* Set a fixed height */
+    }
+
+    .welcome-video iframe {
+        width: 350px; /* Makes the iframe responsive within its container */
+        height: auto;
+        aspect-ratio: 16 / 9; /* Adjust this value based on the desired aspect ratio */
+        padding: 0px;
+    }
+
+    .responsive-image {
+        width: 90% !important; /* Full width on small devices */
+        border: 1px solid lightgrey;
+    }
+    
+    .banner-photo {
+        display: none
+    };
+
+    .banner {
+        width: 100%;
+    }
+
+    .article-container {
+        grid-template-columns: 1fr;
     }
 }
