@@ -148,13 +148,13 @@ p, ul {
 }
 
 .main h4 {
-    color: rgb(87, 87, 87);
+    color: rgb(0, 0, 0);
     margin: 0; /* Removes the default margin */
     padding-top: 3%; /* Padding set to 50px */
     padding-bottom: 2%; /* Padding set to 50px */
     padding-left: 5%; /* Padding set to 50px */
     padding-right: 5%; /* Padding set to 50px */
-    font-size: 15;
+    font-size: 18;
 }
 
 .main h2 {
@@ -464,7 +464,6 @@ button.primary:hover,
 
     .welcome-message {
         padding: 0px;
-
     }
     
     .welcome-video {
@@ -527,5 +526,42 @@ button.primary:hover,
 
     .main {
         width: 100%;
+    }
+}
+
+@media (max-width: 844px) {
+    nav {
+        width: 100%;
+    }
+    
+    nav a {
+        padding: 10px;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    .banner-photo {
+        margin-top: 0px;
+        top: 60%;
+        right: 0%;
+    }
+
+    .banner-photo img {
+        width: 80px;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .welcome-container {
+        padding: 0px;
+        height: 300px;
+    }
+
+    .welcome-message {
+        padding: 0px;
     }
 }
