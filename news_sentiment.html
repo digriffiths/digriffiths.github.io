@@ -53,7 +53,7 @@
 		<p>
 		A custom-built news retriever gathers articles by constructing URLs tailored to specific search queries and date ranges. The articles are parsed using Beautiful Soup to extract titles and dates. This information is stored in a pandas DataFrame, indexed by date, and saved as a CSV file for further processing.
 		</p>
-		<img src="images/news_data.png" style="border: 1px solid lightgrey; width: auto">
+		<img src="images/news_data.png" class="responsive-image">
 		<p class="content-label">Bitcoin news article headlines over 2 year period</p>
 		<p></p>
 		<h3>Sentiment Analysis</h3>
@@ -70,7 +70,7 @@
 		<p>Sentiment scores are then calculated using two tools: VADER (Valence Aware Dictionary and sEntiment Reasoner) and TextBlob. VADER is a lexicon and rule-based sentiment analysis tool designed to handle sentiments expressed in social media. TextBlob is a simpler library providing an API for common natural language processing (NLP) tasks, including sentiment analysis, based on pattern library and text processing methodologies.
 		</p>		
 		<p>The sentiment scores from both tools are appended to the DataFrame. The data is resampled to a daily frequency, and corresponding market data, including daily asset returns and cumulative returns, is integrated into the DataFrame. Sentiment-based trading signals are generated based on these scores, influencing the strategy's returns calculations.</p>
-		<img src="images/sentiment_scores.png" style="border: 1px solid lightgrey; width: auto">
+		<img src="images/sentiment_scores.png" class="responsive-image">
 		<p class="content-label">News article headlines sentiment scores, bitcoin returns and cumulative returns</p>
 		<h3>Trading Strategy</h3>
 		<p>

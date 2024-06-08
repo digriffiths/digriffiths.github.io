@@ -13,6 +13,11 @@ p, ul {
     color: grey;
 }
 
+.responsive-image {
+    width: 50% !important; /* Full width on small devices */
+    border: 1px solid lightgrey;
+}
+
 .banner {
     position: relative;
 	width: 70%;
@@ -78,17 +83,17 @@ p, ul {
 
 .main p {
     margin: 0; /* Removes the default margin */
-    padding-left: 70px; /* Padding set to 50px */
-    padding-right: 70px; /* Padding set to 50px */
-    padding-bottom: 20px; /* Padding set to 50px */
+    padding-left: 5%; /* Padding set to 50px */
+    padding-right: 5%; /* Padding set to 50px */
+    padding-bottom: 3%; /* Padding set to 50px */
     line-height: 1.5; /* Add spacing between lines of text */
 }
 
 .main ul {
     margin: 0; /* Removes the default margin */
-    padding-left: 120px; /* Padding set to 50px */
-    padding-right: 70px; /* Padding set to 50px */
-    padding-bottom: 20px; /* Padding set to 50px */
+    padding-left: 10%; /* Padding set to 50px */
+    padding-right: 5%; /* Padding set to 50px */
+    padding-bottom: 3%; /* Padding set to 50px */
 }
 
 .main li {
@@ -125,12 +130,12 @@ p, ul {
 
 .main h3 {
     margin: 0; /* Removes the default margin */
-    padding-top: 50px; /* Padding set to 50px */
-    padding-bottom: 30px; /* Padding set to 50px */
+    padding-top: 3%; /* Padding set to 50px */
+    padding-bottom: 2%; /* Padding set to 50px */
     border-top: 1px dotted; /* Only bottom border is dotted */
 
-    padding-left: 70px; /* Padding set to 50px */
-    padding-right: 70px; /* Padding set to 50px */
+    padding-left: 5%; /* Padding set to 50px */
+    padding-right: 5%; /* Padding set to 50px */
     font-size: 20;
     font-weight: bold; /* Makes the text bold */
 }
@@ -138,10 +143,10 @@ p, ul {
 .main h4 {
     color: rgb(87, 87, 87);
     margin: 0; /* Removes the default margin */
-    padding-left: 70px; /* Padding set to 50px */
-    padding-top: 20px; /* Padding set to 50px */
-    padding-bottom: 20px; /* Padding set to 50px */
-    padding-right: 70px; /* Padding set to 50px */
+    padding-top: 3%; /* Padding set to 50px */
+    padding-bottom: 2%; /* Padding set to 50px */
+    padding-left: 5%; /* Padding set to 50px */
+    padding-right: 5%; /* Padding set to 50px */
     font-size: 15;
 }
 
@@ -160,21 +165,19 @@ p, ul {
 }
 
 .title-image {
-    position: relative; /* Add this line */
-    width: 100% !important; /* Stretch across the full width of the container */
-    height: 200px; /* Set a fixed height and ensure the unit is specified */
-    padding: 0 !important;
-    margin: 0 !important;
+    position: relative;
+    width: 100%; /* Ensure the container takes the full width of its parent */
+    height: auto; /* Adjust height as needed or keep it auto */
+    overflow: hidden; /* Optional: Ensures no part of the image spills out */
 }
 
 .title-image img {
-    width: 100% !important; /* Stretch across the full width of the container */
-    height: 200; /* Set a fixed height */
+    width: 100%;
+    height: 20%; /* Set a fixed height */
     object-fit: cover; /* Crop and cover the area without distorting the aspect ratio */
     padding: 0 !important;
     margin: 0 !important;
 }
-
 
 .title-image h1 {
     position: absolute;
@@ -390,8 +393,8 @@ a:hover {
 
 .fields{
     padding: 0;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .field {
@@ -420,7 +423,7 @@ a:hover {
 .submit-button {
     list-style-type: none; /* Removes bullet points */
     margin-top: 10px; /* Padding set to 50px */
-    margin-left: 70px; /* Padding set to 50px */
+    margin-left: 5%; /* Padding set to 50px */
     margin-bottom: 10px; /* Padding set to 50px */
 
 }
@@ -498,4 +501,23 @@ button.primary:hover,
         color: white;
     }
 
+    .title-image h1 {
+        font-size: 10px; /* Larger font size */
+    }
+
+    .title-image img {
+        height: 10%; /* Set a fixed height */
+    }
+
+    .main iframe {
+        width: auto; /* Makes the iframe responsive within its container */
+        height: auto; /* You can adjust or make it responsive as needed */
+        padding: 0;
+        margin: 0;
+        }
+
+    .responsive-image {
+        width: 90% !important; /* Full width on small devices */
+        border: 1px solid lightgrey;
+    }
 }

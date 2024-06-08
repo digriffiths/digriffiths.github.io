@@ -48,23 +48,23 @@
 		<p>Here is the a link to the <a href="https://github.com/digriffiths/task_management" target="_blank">code</a></p>
 		<h3>Register User</h3>
 		<p>The registration endpoint first checks if a username already exists in the database and if so, raises an HTTP exception to prevent duplicate registrations. If the username is available, it hashes the password and creates a new user with a unique UUID and the hashed password. This new user is then added to the database. The function returns the newly created user, ensuring that usernames are unique and passwords are securely stored.</p>
-		<img src="images/1_register_user.png" style="width: 50%;">
+		<img src="images/1_register_user.png" class="responsive-image">
 		<h2>Json Web Token</h2>
 		<p>The token endpoint is responsible for user authentication. It accepts username and password credentials via an OAuth2PasswordRequestForm. The function first retrieves the user from the database using the provided username. It then verifies the provided password against the stored hashed password. If the verification fails, it raises an HTTP exception indicating incorrect credentials. If successful, it constructs a JWT (JSON Web Token) payload with the user's ID, username, and the token's issuance time. A token is then created with an expiration time and returned to the user. This token can be used for authenticating subsequent requests by the user.</p>
-		<img src="images/2_jwt.png" style="width: 50%;">
+		<img src="images/2_jwt.png" class="responsive-image">
 		<h2>Add Task</h2>
 		<p>The add task endpoint is responsible for adding a new task to the system. It first extracts the authorization token from the request headers and verifies it to retrieve the user's ID. A new task instance is then created with a unique UUID, a default status of "pending", and the user's ID, along with other task details passed in the request. This task instance is added to the database. Finally, the newly created task object is returned to the client. This setup ensures secure and authenticated task creation within the system.</p>
-		<img src="images/3_add_task.png" style="width: 50%;">
+		<img src="images/3_add_task.png" class="responsive-image">
 		<h2>User's Tasks</h2>
 		<p>The user tasks endpoint first extracts the authorization token from the request headers and verifies it to obtain the user's ID. Using this ID, it fetches the user's tasks from the database. Each task is then transformed into a structured output format defined by the TaskOut schema, which includes details such as task ID, user ID, status, name, associated project, due date, creation date, and priority status. The tasks are finally sorted to prioritize high-priority tasks before being returned to the client. This setup ensures that the user receives a well-organized list of their tasks, with critical tasks highlighted at the top of the list.</p>
-		<img src="images/4_view_task.png" style="width: 50%;">
+		<img src="images/4_view_task.png" class="responsive-image">
 		<h2>Update Task As High Priority</h2>
 		<p>The update task endpoint first retrieves the authorization token from the request headers and verifies it to ensure the user is authorized. The function then fetches the task from the database; if the task does not exist or if the task's user ID does not match the token's user ID, it raises an HTTP exception. If the checks pass, the task is updated in the database using the provided task_update data. Finally, the updated task details are returned in a structured format defined by TaskOut schema, which includes task ID, user ID, status, name, associated project, due date, creation date, and priority status. This setup ensures that only authorized and valid updates are made to tasks.</p>
-		<img src="images/5_prioritise_task.png" style="width: 50%;">
+		<img src="images/5_prioritise_task.png" class="responsive-image">
 		<h2>Delete Task</h2>
 		<p>The delete task endpoint first retrieves the authorization token from the request headers and verifies it to obtain the user's ID. The task is then fetched from the database; if the task does not exist or if the task's user ID does not match the token's user ID, an HTTP exception is raised. If the checks pass, the task is deleted from the database. The function returns a success message along with the details of the deleted task, ensuring that only authorized and valid deletions are made within the system.
 		</p>
-		<img src="images/6_delete_task.png" style="width: 50%; padding-bottom: 5%;">
+		<img src="images/6_delete_task.png" class="responsive-image padding-bottom: 5%;">
 		<div class="skills">
 			<h3>Key Skills</h3>
 			<p>
