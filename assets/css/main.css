@@ -40,7 +40,7 @@ p, ul {
 }
 
 .banner-photo img {
-    width: 100%; /* Ensures the image covers the full width of its container */
+    width: 75%; /* Ensures the image covers the full width of its container */
     height: auto; /* Ensures the image covers the full height of its container */
     border-radius: 50%;
     object-fit: cover;
