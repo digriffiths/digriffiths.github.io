@@ -13,6 +13,11 @@ p, ul {
     color: grey;
 }
 
+.fa-linkedin .fab {
+    padding: 0px;
+    margin: 0px;
+}
+
 .responsive-image {
     width: 50% !important; /* Full width on small devices */
     border: 1px solid lightgrey;
@@ -20,7 +25,7 @@ p, ul {
 
 .banner {
     position: relative;
-	width: 70%;
+	width: 82rem;
 	margin-left: auto;
 	margin-right: auto;
     /* border: 1px solid #000; */
@@ -51,8 +56,7 @@ p, ul {
 }
 
 .banner-photo {
-    position: absolute; /* This line is crucial */
-    /* background-color: red; */
+    position: absolute;
     height: 180px;
     margin-top: 30px;
     right: 0;
@@ -62,14 +66,17 @@ p, ul {
     transform: translateY(-50%); /* Shift it up by half its own height */
     display: flex; /* Added to use flexbox for centering */
     justify-content: center; /* Center horizontally */
+    z-index: 3; /* Higher z-index to ensure it stays on top */
+
 }
 
 .main {
     background-color: white;
-    width: 70%;
+    width: 82rem;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+
 }
 
 .main img {
@@ -162,6 +169,8 @@ p, ul {
 
 .main iframe {
     padding-top: 20;
+    width: 100%;
+    height: 100%;
 }
 
 .title-image {
@@ -203,21 +212,29 @@ p, ul {
     display: flex;
     align-items: center; /* Keeps items vertically aligned in the middle */
     height: 450px;
-    padding: 50px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .welcome-message {
-flex: 1; /* Takes up 1 part of the available space */
-padding: 0;
-text-align: center;
+    flex: 1; /* Takes up 1 part of the available space */
+    padding: 0;
+    text-align: center;
 }
 
 .welcome-video {
     flex: 2;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ensure the container has a height to work with */
+    height: 100%;
+    width: 100%;
+}
+
+.welcome-video iframe {
+    padding: 10px;
 }
 
 .article-container {
@@ -287,6 +304,7 @@ text-align: center;
     background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
     overflow: auto; /* Allows scrolling */
     background-size: cover;
+    height: 100%;
 }
 
 nav, nav * {
@@ -299,11 +317,14 @@ nav {
     display: flex; /* Use flexbox to align children */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Align items vertically */
-    background: rgba(255, 255, 255, 0.175);
+    background: rgb(102, 102, 102);
     color: white;
-    width: 70%; /* Ensure the nav bar extends full width */
+    width: 82rem; /* Ensure the nav bar extends full width */
     margin-left: auto;
     margin-right: auto;
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 2; /* Higher z-index to ensure it stays on top */
 }
 
 nav ul {
@@ -366,7 +387,13 @@ a:hover {
     margin-top: 10px; /* Padding set to 50px */
     margin-left: 5%; /* Padding set to 50px */
     margin-bottom: 10px; /* Padding set to 50px */
+}
 
+.main iframe {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Adjust this value based on the desired aspect ratio */
+    padding: 0px;
 }
 
 .actions input[type="submit"] {
@@ -437,18 +464,16 @@ button.primary:hover,
 
     .welcome-message {
         padding: 0px;
+
     }
     
     .welcome-video {
-        height: auto; /* Ensure the container has a height to work with */
-    }
-
-    .welcome-video iframe {
-        width: auto; /* Makes the iframe responsive within its container */
-        height: auto; /* You can adjust or make it responsive as needed */
+        height: 250px;
+        display: flex;
+        align-items: flex-start; /* Align items to the start of the flex container */
         padding: 0;
         margin: 0;
-        }
+    }
 
     .article-container {
         display: grid;
@@ -464,15 +489,43 @@ button.primary:hover,
         height: 10%; /* Set a fixed height */
     }
 
-    .main iframe {
-        width: auto; /* Makes the iframe responsive within its container */
-        height: auto; /* You can adjust or make it responsive as needed */
-        padding: 0;
-        margin: 0;
-        }
+    .welcome-video iframe {
+        width: 350px; /* Makes the iframe responsive within its container */
+        height: auto;
+        aspect-ratio: 16 / 9; /* Adjust this value based on the desired aspect ratio */
+        padding: 0px;
+    }
 
     .responsive-image {
         width: 90% !important; /* Full width on small devices */
         border: 1px solid lightgrey;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        width: 100%;
+    }
+    
+    nav a {
+        padding: 10px;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    .banner-photo {
+        margin-top: 0px;
+        top: 80%;
+        right: 0%;
+    }
+
+    .banner-photo img {
+        width: 100px;
+    }
+
+    .main {
+        width: 100%;
     }
 }
