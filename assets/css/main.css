@@ -289,79 +289,40 @@ text-align: center;
     background-size: cover;
 }
 
-/* Style for the navigation bar */
-#nav {
+nav, nav * {
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* Reset line-height */
+}
+
+nav {
     display: flex; /* Use flexbox to align children */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Align items vertically */
-    padding: 0;
     background: rgba(255, 255, 255, 0.175);
     color: white;
-    line-height: 3rem;
     width: 70%; /* Ensure the nav bar extends full width */
     margin-left: auto;
     margin-right: auto;
-    border: 1px dotted black;
-    height: 3rem;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    flex-wrap: wrap; /* Allow items to wrap */
 }
 
-
-/* General link styles */
-#nav ul {
-    display: flex; /* Enable flexbox for direct children */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Removes default padding */
-    list-style: none; /* Removes default list styling */
-    width: 100%; /* Full width to contain all items */
-    margin: 0; /* Remove default margin */
-    flex-wrap: wrap; /* Allow items to wrap */
+nav ul {
+    padding: 0px;
+    margin: 0px;
 }
 
-#nav li {
-    display: inline; /* Allows items to sit in line and use flex properties */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    text-wrap: nowrap;
-    padding: 0 10px; /* Add some padding around each item */
+nav li {
+    display: inline-flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    flex-direction: row; /* Stacks the items vertically */
+
 }
 
-#nav li a {
-    color: white; /* Text color for links */
-    padding: 8px 15px; /* Padding around links */
-    text-decoration: none; /* No underline for links */
-    text-transform: uppercase; /* Capitalizes all text */
-}
-
-#nav .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-#nav .dropdown-content {
-    display: none; /* Hidden by default, shown on hover */
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    white-space: nowrap; 
-}
-
-#nav .dropdown-content a {
-    color: black;
-    padding: 5px 5px;
+nav a {
     text-decoration: none;
-    display: block;
-}
-
-#nav .dropdown:hover .dropdown-content,
-#nav .dropdown-content a:hover {
-    display: block;
-    color: #626262; /* This will not apply due to specificity, needs adjustment if intended for all a:hover within dropdown-content */
+    color: white;
+    padding: 20px;
 }
 
 a:hover {
@@ -370,26 +331,6 @@ a:hover {
 	text-decoration: none;
 }
 
-#nav ul.links {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-flex-grow: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-grow: 1;
-	flex-grow: 1;
-	-moz-flex-shrink: 1;
-	-webkit-flex-shrink: 1;
-	-ms-flex-shrink: 1;
-	flex-shrink: 1;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-weight: 900;
-	letter-spacing: 0.075em;
-	list-style: none;
-	text-transform: none;
-    font-size: 12px;
-}
 
 .fields{
     padding: 0;
@@ -451,9 +392,23 @@ button.primary:hover,
     height: 200px;
 }
 
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
-    #nav {
-        display: none
+    nav {
+        width: 100%;
+    }
+    
+    nav li {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav a {
+        padding: 10px;
     }
 
     .banner {
@@ -462,12 +417,12 @@ button.primary:hover,
 
     .banner-photo {
         margin-top: 0px;
-        top: 10%;
-        right: 5%;
+        top: 20%;
+        right: 0%;
     }
 
     .banner-photo img {
-        width: 50px;
+        width: 40px;
     }
 
     .main {
