@@ -230,13 +230,13 @@ p, ul {
 
 .article-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     color: white;
 }
 
 .article {
     position: relative; /* Ensure it's positioned */
-    margin: 20px; /* Match the padding of the paragraph */
+    margin: 40px; /* Match the padding of the paragraph */
     padding: 0;
     background-color: white;
     overflow: hidden; /* This should now effectively clip the overflow */
