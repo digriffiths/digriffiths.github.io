@@ -32,33 +32,33 @@
 	<div class="main">
 		<div class="title-image">
 			<img src="images/projects_4.jpg"/>		
-			<h1>Portfolio Construction Based on Momentum</h1>
+			<h1>Momentum Trading Strategy for S&P 500</h1>
 		</div>
 		<h3>Overview</h3>
 		<p>
-		This project presents a comprehensive momentum-based trading strategy designed for the construction and management of an investment portfolio comprising S&P 500 stocks. By analyzing returns over various timeframes, calculating High Quality Momentum (HQM) scores, and selecting the top 50 stocks, the strategy underscores the effectiveness of a multi-timeframe momentum approach in enhancing portfolio performance.
+		This project presents a momentum-based trading strategy for portfolio management, utilizing daily data from the S&P 500. It selects the top 50 stocks daily based on High Quality Momentum (HQM) scores, which are calculated using returns across multiple timeframes (one year, six months, three months, and one month). The strategy incorporates daily portfolio rebalancing to maintain exposure to the highest-momentum stocks. Performance is evaluated by comparing cumulative returns against the S&P 500 benchmark, visualized through a time series plot.	
 		</p>
 		<p>
 		Here is the <a href="https://github.com/digriffiths/momentum_strategy" target="_blank">link to the code</a>.
 		</p>
-		<h3>Data Foundation</h3>
+		<h3>Data</h3>
 		<p>
-		The strategy leverages daily stock data for S&P 500 companies spanning from 2020 to 2024. It involves calculating logarithmic returns for each stock across multiple timeframes: one month, three months, six months, and one year. This multi-timeframe analysis ensures a robust assessment of stock momentum.
+		We first being by calculating the returns for the time periods for each stock.
 		</p>
 		<img src="images/momentum_returns.png"/>
 		<h3>High Quality Momentum (HQM) score</h3>
 		<p>
-		Returns are used to calculate percentile ranks for each timeframe, and the average of these percentiles is computed to derive the High Quality Momentum (HQM) score. The HQM score is a composite measure that identifies stocks exhibiting strong momentum across different periods, making it a crucial metric for portfolio construction.
+		We use these returns to calculate percentile ranks for each timeframe, and the average of these percentiles is computed to derive the High Quality Momentum (HQM) score. The HQM score is a composite measure that identifies stocks exhibiting strong momentum across different periods, making it a crucial metric for portfolio construction.
 		</p>
 		<img src="images/momentum_3_hqm_score.png"/>
 		<h3>Portfolio Construction and Returns</h3>
 		<p>
-		An equal-weighted portfolio is constructed using the top 50 stocks based on their HQM scores. The performance of this portfolio is continuously tracked and analyzed to evaluate its effectiveness. Although the strategy underperforms the S&P 500 benchmark, it serves as a proof of concept demonstrating the potential of multi-timeframe momentum in portfolio construction.
+		An equal-weighted portfolio is constructed using the top 50 stocks based on their HQM scores. 
 		</p>
 		<img src="images/momentum_5_port_returns.png" class="responsive-image"/>
 		<h3>Performance Visualization</h3>
 		<p>
-		The strategy's performance is illustrated through a comparative chart that contrasts the momentum-based portfolio with the S&P 500 index. This visualization highlights the theoretical advantages and practical insights of incorporating a multi-timeframe momentum approach in portfolio construction.
+		The strategy's performance is illustrated through a comparative chart that contrasts the momentum-based portfolio with the S&P 500 index. Although the strategy underperforms the S&P 500 benchmark, it serves as a proof of concept demonstrating the potential of multi-timeframe momentum in portfolio construction.
 		</p>
 		<img src="images/momentum_chart.png"/>
 		<div class="skills">
